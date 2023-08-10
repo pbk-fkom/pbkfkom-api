@@ -24,6 +24,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.get("/", (req, res) => {
+  res.send("Paguyuban Barudak Komputer Open API 🥳");
+});
 app.use(`${URL}/members`, membersApiRouter);
 app.use(`${URL}/structurals`, structuralsApiRouter);
 app.use(`${URL}/quotes`, quotesApiRouter);
